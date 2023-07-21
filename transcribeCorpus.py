@@ -10,7 +10,8 @@ import sys
 tokenizer = Wav2Vec2Tokenizer.from_pretrained("facebook/wav2vec2-base-960h")
 model = Wav2Vec2ForCTC.from_pretrained("facebook/wav2vec2-base-960h")
 
-pathAudio = "/home/users/bcritt/audio/"
+user = os.getenv('USER')
+pathAudio = "/farmshare/learning/data/audio/".format(user)
 files = librosa.util.find_files(pathAudio, ext=['wav'])
 files = np.asarray(files)
 info=[]
@@ -24,4 +25,4 @@ for y in files:
 	info.append(transcriptions)
 
 df = pd.DataFrame(info)
-df.to_csv("/scratch/users/bcritt/outputs/transcribe.csv")
+df.to_csv("/scratch/users/$USER/outputs/transcribe.csv")
