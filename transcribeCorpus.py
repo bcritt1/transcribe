@@ -25,4 +25,4 @@ for y in files:
 	info.append(transcriptions)
 
 df = pd.DataFrame(info)
-df.to_csv("/scratch/users/$USER/outputs/transcribe.csv")
+df.to_csv("/scratch/users/{}/outputs/transcribe.csv".format(user))

@@ -8,5 +8,7 @@
 #SBATCH --array=1-2
 
 # load python and set input location
-mkdir /scratch/users/$USER/outputs
-python3 /farmshare/learning/scripts/scripts/transcribe/parallel_transcribe.py --file "/farmshare/learning/data/audio/${SLURM_ARRAY_TASK_ID}.wav"
+ml python/3.11.4
+grep 'python3.11' ~/.bashrc || echo "alias python3='python3.11'" >> ~/.bashrc
+mkdir -p /scratch/users/$USER/outputs
+python3 /farmshare/learning/scripts/scripts/transcribe/transcribeCorpus.py --file "/farmshare/learning/data/audio/${SLURM_ARRAY_TASK_ID}.wav"
