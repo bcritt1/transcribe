@@ -2,7 +2,7 @@
 #SBATCH --job-name=myarrayjob
 #SBATCH --output=/home/users/%u/out/myarray.%j.out
 #SBATCH --error=/home/users/%u/err/myarray.%j.err
-#SBATCH -p owners
+#SBATCH -p normal
 #SBATCH --ntasks=1 # Run a single task 
 #SBATCH --mem-per-cpu=8gb # Memory per processor 
 #SBATCH --array=1-2

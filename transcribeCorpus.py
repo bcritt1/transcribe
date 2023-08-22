@@ -24,4 +24,4 @@ for y in files:
 	info.append(transcriptions)
 
 df = pd.DataFrame(info)
-df.to_csv("/scratch/users/bcritt/outputs/transcribe.csv")
+df.to_csv("/scratch/users/bcritt/outputs/transcribe.csv".format(user))
